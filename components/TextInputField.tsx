@@ -27,6 +27,7 @@ const TextFormField = ({
       required
       type={inputType}
       name={inputName}
+      autoComplete={inputName}
       value={value}
       onChange={onChange}
     />

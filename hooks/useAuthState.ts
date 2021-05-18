@@ -1,5 +1,4 @@
 import { AuthUserType } from './../types';
-import { User } from '@supabase/supabase-js';
 import { useEffect, useState } from "react";
 import { supabase } from "../utils/supabaseClient";
 
