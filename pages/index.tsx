@@ -1,16 +1,11 @@
 import React from 'react';
-import Link from 'next/link';
-import Layout from '../components/Layout';
+import PermissionWrapper from '../components/PermissionWrapper';
+import { AuthUserType } from '../types';
+import MainDashboard from './MainDashboard';
 
-const IndexPage = () : JSX.Element => (
-  <Layout>
-    <h1>Hello Next.js 👋</h1>
-    <p>
-      <Link href="/about">
-        <a>About</a>
-      </Link>
-    </p>
-  </Layout>
-)
+
+const IndexPage = ({ authUser } : AuthUserType) : JSX.Element => {
+  return <PermissionWrapper authUser={authUser}><MainDashboard /></PermissionWrapper>;
+}
 
 export default IndexPage;
