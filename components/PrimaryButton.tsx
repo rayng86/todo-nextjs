@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
 type PrimaryButtonType = {
-  onClick: (e: React.MouseEvent<HTMLButtonElement>) => void,
-  buttonText: string,
-  type: "button" | "submit" | "reset" | undefined,
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void,
+  buttonText?: string,
+  type?: "button" | "submit" | "reset" | undefined,
+  children?: ReactNode,
 }
 
-export const PrimaryButton = ({ onClick, buttonText, type } : PrimaryButtonType) : JSX.Element=> {
+export const PrimaryButton = ({ children, onClick, buttonText, type='button' } : PrimaryButtonType) : JSX.Element=> {
   return (
     <>
       <button
@@ -14,7 +15,7 @@ export const PrimaryButton = ({ onClick, buttonText, type } : PrimaryButtonType)
         type={type}
         onClick={onClick}
       >
-        {buttonText}
+        {children ? children : buttonText}
       </button>
     </>
   );
