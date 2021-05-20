@@ -2,10 +2,18 @@ import React from 'react';
 import '../styles/globals.css';
 import { AppProps } from 'next/app';
 import useAuthState from '../hooks/useAuthState';
+import { UserContext } from '../store';
 
-function App({ Component, pageProps }: AppProps) {
+const App = ({ Component, pageProps }: AppProps) : JSX.Element => {
   const { user } = useAuthState();
-  return <Component {...pageProps} authUser={user} />;
-}
+  const state = {
+    user
+  };
+  return (
+  <UserContext.Provider value={state}>
+    <Component {...pageProps} />
+  </UserContext.Provider>
+  );
+};
 
 export default App;

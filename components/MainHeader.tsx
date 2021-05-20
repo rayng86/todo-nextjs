@@ -1,9 +1,7 @@
 import Link from 'next/link';
-import React from 'react';
-import { AuthUserType } from '../types';
+import React, { useContext } from 'react';
+import { UserContext } from '../store';
 import { supabase } from '../utils/supabaseClient';
-
-type MainHeaderProps = AuthUserType;
 
 const NotLoggedIn = () => (
   <div className="md:block">
@@ -39,7 +37,8 @@ const LoggedIn = () => (
   </div>
 );
 
-const MainHeader = ({ authUser } : MainHeaderProps) : JSX.Element=> {
+const MainHeader = () : JSX.Element=> {
+  const { user } = useContext(UserContext);
   return (
     <header className="pb-7">
       <div>
@@ -50,7 +49,7 @@ const MainHeader = ({ authUser } : MainHeaderProps) : JSX.Element=> {
                 <Link href="/">
                   <a className="flex-shrink-0">My Project</a>
                 </Link>
-                {authUser ? <LoggedIn /> : <NotLoggedIn />}
+                {user ? <LoggedIn /> : <NotLoggedIn />}
               </div>
             </div>
           </div>

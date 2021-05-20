@@ -5,11 +5,11 @@ import PrimaryButton from '../components/PrimaryButton';
 import TextFormField from '../components/TextInputField';
 import { supabase } from "../utils/supabaseClient";
 
-type AuthUserType = {
+type AuthProps = {
   isLogin?: boolean,
 }
 
-const Auth = ({ isLogin=true } : AuthUserType) : JSX.Element => {
+const Auth = ({ isLogin=true } : AuthProps) : JSX.Element => {
   const [error, setError] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');

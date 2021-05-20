@@ -2,21 +2,21 @@ import React, { ReactNode } from 'react';
 import Head from 'next/head';
 import MainFooter from './MainFooter';
 import MainHeader from './MainHeader';
-import { AuthUserType } from '../types';
 
 type Props = {
   children?: ReactNode
   title?: string
-} & AuthUserType;
+};
 
-const Layout = ({ authUser, children, title = 'My Project' }: Props) : JSX.Element => (
+const Layout = ({ children, title = 'My Project' }: Props) : JSX.Element => (
   <div>
     <Head>
       <title>{title}</title>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <script src="https://kit.fontawesome.com/d0578876ef.js" crossOrigin="anonymous"></script>
     </Head>
-    <MainHeader authUser={authUser} />
+    <MainHeader />
       {children}
     <MainFooter />
   </div>
