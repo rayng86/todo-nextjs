@@ -53,6 +53,7 @@ const Auth = ({ isLogin=true } : AuthProps) : JSX.Element => {
                 setEmail(e.target.value)
               }
               placeholder="Your Email"
+              required
             />
             <TextFormField
               label="Password"
@@ -63,6 +64,7 @@ const Auth = ({ isLogin=true } : AuthProps) : JSX.Element => {
                 setPassword(e.target.value)
               }
               placeholder="Your password"
+              required
             />
             {error && <p className="text-red-600 text-sm">{error}</p>}
             <div className="pt-4">
