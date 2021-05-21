@@ -8,7 +8,7 @@ type Props = {
   title?: string
 };
 
-const Layout = ({ children, title = 'My Project' }: Props) : JSX.Element => (
+const Layout = ({ children, title = 'Simple To Dos' }: Props) : JSX.Element => (
   <div>
     <Head>
       <title>{title}</title>

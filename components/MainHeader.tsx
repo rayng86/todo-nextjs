@@ -47,7 +47,7 @@ const MainHeader = () : JSX.Element=> {
             <div className="flex items-center justify-between h-16">
               <div className="w-full justify-between flex items-center">
                 <Link href="/">
-                  <a className="flex-shrink-0">My Project</a>
+                  <a className="flex-shrink-0">Simple To Dos</a>
                 </Link>
                 {user ? <LoggedIn /> : <NotLoggedIn />}
               </div>
