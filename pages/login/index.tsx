@@ -1,21 +1,22 @@
 import { useRouter } from 'next/router';
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
 import Layout from '../../components/Layout';
-import { AuthUserType } from '../../types';
+import { UserContext } from '../../store';
 import Auth from '../Auth';
 
-const Login = ({ authUser } : AuthUserType) : JSX.Element=> {
+const Login = () : JSX.Element=> {
   const router = useRouter()
+  const { user } = useContext(UserContext);
   useEffect(() => {
-    if (authUser) {
+    if (user) {
       router.push('/')
     }
-  }, [authUser])
-  if (authUser) {
+  }, [user])
+  if (user) {
     return <div>redirecting.</div>
   }
   return (
-    <Layout authUser={authUser}>
+    <Layout>
       <Auth />
     </Layout>
   );
