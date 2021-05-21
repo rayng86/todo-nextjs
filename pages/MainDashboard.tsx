@@ -1,9 +1,11 @@
 import React from 'react';
+import Todos from '../components/ToDo';
 
-const MainDashboard = (): JSX.Element=> {
+const MainDashboard = (): JSX.Element => {
+
   return (
-    <div>
-      <h1>Hello Next.js</h1>
+    <div className="max-w-7xl mx-auto px-8">
+      <Todos />
     </div>
   );
 };
